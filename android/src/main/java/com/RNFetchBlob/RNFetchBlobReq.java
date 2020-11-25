@@ -598,6 +598,7 @@ public class RNFetchBlobReq extends BroadcastReceiver implements Runnable {
                 } catch (ClassCastException ex) {
                     // unexpected response type
                     if (responseBody != null) {
+                        callback.invoke("THROW INTENCIONAL");
                         String responseBodyString = null;
                         try {
                             boolean isBufferDataExists = responseBody.source().buffer().size() > 0;
